@@ -1,0 +1,21 @@
+# depslib dependency file v1.0
+1568423738 source:c:\users\051521\documents\projeto01\main.c
+	<stdio.h>
+	<stdlib.h>
+
+1569187835 source:c:\users\eduardo\desktop\git\projeto01\solicitadimensao.c
+
+1569210314 source:c:\users\eduardo\desktop\git\projeto01\main.c
+	"memoria.h"
+
+1569210213 c:\users\eduardo\desktop\git\projeto01\memoria.h
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+
+1569210301 source:c:\users\eduardo\desktop\git\projeto01\criatabuleiro.c
+	"memoria.h"
+
+1569211229 source:c:\users\eduardo\desktop\git\projeto01\gameplay.c
+	"memoria.h"
+
