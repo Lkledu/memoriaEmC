@@ -44,19 +44,8 @@ void validaPosicao(char hiddenBoard[TAM_L][TAM_C], char tab[TAM_L][TAM_C], int t
                 }
             }
         }
-        timerPause(3000);
+        Sleep(3000);
         visualizarTabuleiro(tab, pQtdL, pQtdC);
         printf("\n\t ;-; Tente mais uma vez\n\n");
     }
-}
-
-void timerPause(float delay){
-    int msec = 0; /* 10ms */
-    clock_t before = clock();
-
-    do {
-          clock_t difference = clock() - before;
-          msec = difference * 1000 / CLOCKS_PER_SEC;
-    } while ( msec < delay );
-
 }
