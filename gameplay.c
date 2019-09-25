@@ -34,6 +34,33 @@ void validaPosicao(char hiddenBoard[TAM_L][TAM_C], char tab[TAM_L][TAM_C], int *
         printf("\n\t Acertou\n\n");
     }else if(card1 == '?' || card2 == '?'){
         visualizarTabuleiro(tab, pQtdL, pQtdC);
+
+        for(int l=0; l < *pQtdL; l++){
+            for(int c=0; c < *pQtdC; c++){
+                if(tab[l][c] == card1 || tab[l][c] == card2){
+                    tab[l][c] = '-';
+                }
+            }
+        }
+
+        for(int l=0; l < *pQtdL; l++){
+            for(int c=0; c < *pQtdC; c++){
+                if((tab[l][c] != '-') && ((tab[l][c] != card1) || (tab[l][c] != card2))){
+                    char apagar = tab[l][c];
+                    tab[l][c] = '-';
+                    for(int i=0; i < *pQtdL; i++){
+                        for(int j =0; j < *pQtdC; j++){
+                            if(tab[l][c] == apagar){
+                                tab[l][c] = '-';
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        Sleep(3000);
+        visualizarTabuleiro(tab, pQtdL, pQtdC);
+
         printf("\n\tWILD CARD\n\n");
     }else{
         visualizarTabuleiro(tab, pQtdL, pQtdC);
@@ -71,5 +98,13 @@ void verificaFimDeJogo(char hiddenBoard[TAM_L][TAM_C], char tab[TAM_L][TAM_C], i
 
     }while(counterFinish < boardLenght);
 
-    printf("\n\tFIM DO JOGO!\n\n")
+    printf("\n\tFIM DO JOGO!\n\n");
+
+    int result = boardLenght * 0.3;
+
+    if(*tentativas > result){
+        printf("Parabéns você tem boa memória!");
+    }else{
+        printf("Você precisa treinar mais sua memória");
+    }
 }
