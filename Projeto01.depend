@@ -5,10 +5,10 @@
 
 1569187835 source:c:\users\eduardo\desktop\git\projeto01\solicitadimensao.c
 
-1569210314 source:c:\users\eduardo\desktop\git\projeto01\main.c
+1569376775 source:c:\users\eduardo\desktop\git\projeto01\main.c
 	"memoria.h"
 
-1569371303 c:\users\eduardo\desktop\git\projeto01\memoria.h
+1569376510 c:\users\eduardo\desktop\git\projeto01\memoria.h
 	<stdio.h>
 	<stdlib.h>
 	<time.h>
@@ -17,6 +17,6 @@
 1569210301 source:c:\users\eduardo\desktop\git\projeto01\criatabuleiro.c
 	"memoria.h"
 
-1569371419 source:c:\users\eduardo\desktop\git\projeto01\gameplay.c
+1569376735 source:c:\users\eduardo\desktop\git\projeto01\gameplay.c
 	"memoria.h"
 

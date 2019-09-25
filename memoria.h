@@ -11,4 +11,5 @@ void preencherTabuleiro(char tab[TAM_L][TAM_C], int *pQtdL, int *pQtdC);
 void construirTabuleiro(char tab[TAM_L][TAM_C], int *pQtdL, int *pQtdC);
 void visualizarTabuleiro(char tab[TAM_L][TAM_C], int *pQtdL, int *pQtdC);
 void posicionaLetras(char tabLetra[TAM_L][TAM_C], int *pQtdL, int *pQtdC);
-void validaPosicao(char hiddenBoard[TAM_L][TAM_C], char tab[TAM_L][TAM_C], int tentativas, int *pQtdL, int *pQtdC);
+void verificaFimDeJogo(char hiddenBoard[TAM_L][TAM_C], char tab[TAM_L][TAM_C], int *tentativas, int *pQtdL, int *pQtdC);
+

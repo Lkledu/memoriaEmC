@@ -20,20 +20,20 @@ char pedePosicao(char hiddenBoard[TAM_L][TAM_C], char tab[TAM_L][TAM_C], int *pQ
     pedeColuna(&posC, pQtdC);
 
     tab[posL][posC] = hiddenBoard[posL][posC];
-    printf("%c", tab[posL][posC]);
     return hiddenBoard[posL][posC];
 }
 
-void validaPosicao(char hiddenBoard[TAM_L][TAM_C], char tab[TAM_L][TAM_C], int tentativas, int *pQtdL, int *pQtdC){
+void validaPosicao(char hiddenBoard[TAM_L][TAM_C], char tab[TAM_L][TAM_C], int *tentativas, int *pQtdL, int *pQtdC){
     char card1, card2;
     card1 = pedePosicao(hiddenBoard, tab, pQtdL, pQtdC);
     card2 = pedePosicao(hiddenBoard, tab , pQtdL, pQtdC);
 
-    tentativas++;
+    ++*tentativas;
     if(card1 == card2){
-        printf("\n\t Acertou\n\n");
         visualizarTabuleiro(tab, pQtdL, pQtdC);
+        printf("\n\t Acertou\n\n");
     }else if(card1 == '?' || card2 == '?'){
+        visualizarTabuleiro(tab, pQtdL, pQtdC);
         printf("\n\tWILD CARD\n\n");
     }else{
         visualizarTabuleiro(tab, pQtdL, pQtdC);
@@ -48,4 +48,28 @@ void validaPosicao(char hiddenBoard[TAM_L][TAM_C], char tab[TAM_L][TAM_C], int t
         visualizarTabuleiro(tab, pQtdL, pQtdC);
         printf("\n\t ;-; Tente mais uma vez\n\n");
     }
+
+}
+
+void verificaFimDeJogo(char hiddenBoard[TAM_L][TAM_C], char tab[TAM_L][TAM_C], int *tentativas, int *pQtdL, int *pQtdC){
+    int ptrL = *pQtdL;
+    int ptrC = *pQtdC;
+    int boardLenght = ptrL * ptrC;
+    int counterFinish = 0;
+    do{
+        counterFinish = 0;
+        for(int l=0; l < *pQtdL; l++){
+            for(int c=0; c < *pQtdC; c++){
+                if(tab[l][c] != '-'){
+                    counterFinish++;
+                }
+            }
+        }
+        if(counterFinish < boardLenght){
+            validaPosicao(hiddenBoard, tab, tentativas, pQtdL, pQtdC);
+        }
+
+    }while(counterFinish < boardLenght);
+
+    printf("\n\tFIM DO JOGO!\n\n")
 }
