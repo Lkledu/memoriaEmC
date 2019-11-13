@@ -16,15 +16,17 @@ void pedeColuna(int *posC, int *pQtdC){
 
 char pedePosicao(char hiddenBoard[TAM_L][TAM_C], char tab[TAM_L][TAM_C], int *pQtdL, int *pQtdC){
     int posL = 0 , posC = 0;
-    pedeLinha(&posL, pQtdL);
-    pedeColuna(&posC, pQtdC);
-
+    do{
+        pedeLinha(&posL, pQtdL);
+        pedeColuna(&posC, pQtdC);
+    }while((posL == *validaL) &&(posC == *validaC));
     tab[posL][posC] = hiddenBoard[posL][posC];
     return hiddenBoard[posL][posC];
 }
 
 void validaPosicao(char hiddenBoard[TAM_L][TAM_C], char tab[TAM_L][TAM_C], int *tentativas, int *pQtdL, int *pQtdC){
     char card1, card2;
+    int validaL = 1+*pQtdL, validaC = 1+*pQtdC;
     card1 = pedePosicao(hiddenBoard, tab, pQtdL, pQtdC);
     card2 = pedePosicao(hiddenBoard, tab , pQtdL, pQtdC);
 
